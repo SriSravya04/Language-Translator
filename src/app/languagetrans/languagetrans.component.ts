@@ -29,19 +29,13 @@ export class LanguagetransComponent {
 
     this.http.get(apiUrl).subscribe((res: any)=>
     {
-      console.log(res);
+      console.log(res[0][0][0]);
       
-      this.toText=res;
+      this.toText=res[0][0][0];
+
     })
 
 
-
-
-
   }
-
-
-
-
 
 }
