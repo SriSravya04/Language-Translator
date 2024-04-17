@@ -19,9 +19,9 @@ import { CommonModule } from '@angular/common';
 export class LanguagetransComponent {
   fromText : any;
   toText : any
-  lang = languages
-  fromLang : any;
-  toLang : any
+  lang = languages.sort((a,b) => a.name.localeCompare(b.name));    
+  fromLang : any = 'auto';
+  toLang : any ='hi';
   constructor(private http:HttpClient){}
 
   translate(){    
@@ -34,8 +34,13 @@ export class LanguagetransComponent {
     this.http.get(apiUrl).subscribe((res: any)=>
     {
       console.log(res[0]);
-      
-      this.toText=res[0];
+      if(this.fromLang=='auto')
+        {
+          this.toText=res[0][0];
+        }
+      else{
+        this.toText=res[0];
+      }
 
     })
 

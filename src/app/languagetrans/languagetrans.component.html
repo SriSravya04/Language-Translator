@@ -16,15 +16,15 @@
            <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
            <li class="row to">
           <select class="fromText" id="fromText" [(ngModel)] = "fromLang">
-            <!-- <option default [value]="en">English</option> -->
-            <option *ngFor="let lingo of lang;" [value] = "lingo.name">{{ lingo.name }}</option>>
+             
+            <option *ngFor="let lingo of lang;" [value] = "lingo.code" [selected] = "lingo.code ==='auto'">{{ lingo.name }}</option>>
           </select>
 
           <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
           <li class="row to">
             <select class="toText" id="toText" [(ngModel)] = "toLang">
-              <!-- <option default [value]="hi">Hindi</option> -->
-              <option *ngFor="let lingo of lang;" [value]="lingo.code">{{ lingo.name }}</option>
+            
+              <option *ngFor="let lingo of lang;" [value]= "lingo.code" [selected]= "lingo.code==='hi'">{{ lingo.name }}</option>
             </select>
              <!-- <div class="icons">
                <i id="to" class="fas fa-volume-up"></i>
