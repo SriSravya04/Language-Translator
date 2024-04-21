@@ -121,7 +121,7 @@
   border-radius: 8px;
   border-right: 2px solid #ffffff;
 }
-.controls .exchange{
+.controls {
   color: #adadad;
   cursor: pointer;
   font-size: 16px;
@@ -143,6 +143,12 @@
   font-size: 17px;
   border-radius: 5px;
   background: #5372F0;
+}
+.exchange{
+  color: #20063c;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s ease;
 }
 
 @media (max-width: 660px){

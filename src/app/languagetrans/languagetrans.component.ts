@@ -46,5 +46,17 @@ export class LanguagetransComponent {
 
 
   }
+  interchange(){
+    var temp: any;
+
+    temp=this.fromLang
+    this.fromLang=this.toLang
+    this.toLang=temp;
+
+    temp=this.fromText
+    this.fromText=this.toText
+    this.toText=temp;
+
+  }
 
 }
