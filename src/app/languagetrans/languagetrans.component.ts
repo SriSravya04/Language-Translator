@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { languages } from '../Models/languages'
 import { CommonModule } from '@angular/common';
-
+import { createWorker } from 'tesseract.js';
 @Component({
   selector: 'app-languagetrans',
   standalone: true,
@@ -57,6 +57,22 @@ export class LanguagetransComponent {
     this.fromText=this.toText
     this.toText=temp;
 
+  }
+  async funcName()
+  {
+   
+    const worker = await createWorker('eng');
+    const ret = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
+    
+    this.fromText= ret.data.text;
+    await worker.terminate();
+ 
+
+  }
+  onFileChanged(event: any) {
+    const file = event.target.files[0];
+    // Upload the file to your server
+    
   }
 
 }

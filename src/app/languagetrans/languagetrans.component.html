@@ -41,6 +41,8 @@
        <div >
          <button class="trans" (click)="translate()">Translate</button>
          <button class="clear">Clear</button>
+         <button class="file-up" (click)="funcName()">select a file</button> 
+         <input type="file" (change)="onFileChanged($event)" accept="image/*">
       </div>
  
      </div>
